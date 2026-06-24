@@ -1,4 +1,0 @@
-.textarea[contenteditable]:empty::before {
-  content: attr(data-placeholder);
-  @apply text-border-primary;
-}
