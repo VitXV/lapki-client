@@ -409,6 +409,43 @@ export const actionFunctions: ActionFunctions = {
     ),
   }),
 
+  createDeepHistory: (sM, args) => ({
+    redo: sM.createDeepState.bind(
+      sM,
+      { ...args, id: args.id, linkByPoint: false, canBeInitial: false },
+      false
+    ),
+    undo: sM.deleteDeepHistory.bind(sM, { ...args, id: args.id!, smId: args.smId }, false),
+  }),
+  deleteDeepHistory: (sM, { id, smId, stateData }) => ({
+    redo: sM.deleteDeepHistory.bind(sM, { smId: smId, id }, false),
+    undo: sM.createDeepState.bind(
+      sM,
+      {
+        smId,
+        dimensions: stateData.dimensions,
+        id,
+        position: stateData.position,
+        parentId: stateData.parentId,
+        linkByPoint: false,
+      },
+      false
+    ),
+  }),
+  changeDeepHistoryPosition: (sM, { smId, id, startPosition, endPosition }) => ({
+    redo: sM.changeDeepHistoryPosition.bind(sM, { smId, id, startPosition, endPosition }, false),
+    undo: sM.changeDeepHistoryPosition.bind(
+      sM,
+      {
+        smId,
+        id,
+        startPosition: endPosition,
+        endPosition: startPosition,
+      },
+      false
+    ),
+  }),
+
   createTransition: (sM, { smId, id, params }) => ({
     redo: sM.createTransition.bind(sM, { ...params, smId, id }, false, false),
     undo: sM.deleteTransition.bind(sM, { smId, id }, false),
@@ -710,6 +747,21 @@ export const actionDescriptions: ActionDescriptions = {
   }),
   changeShallowHistoryPosition: (args) => ({
     name: 'Перемещение локальной истории',
+    description: `Было: "${JSON.stringify(
+      roundPoint(args.startPosition)
+    )}"\nСтало: ${JSON.stringify(roundPoint(args.endPosition))}`,
+  }),
+
+  createDeepHistory: () => ({
+    name: 'Создание глубокой истории',
+    description: ``,
+  }),
+  deleteDeepHistory: () => ({
+    name: 'Удаление глубокой истории',
+    description: ``,
+  }),
+  changeDeepHistoryPosition: (args) => ({
+    name: 'Перемещение глубокой истории',
     description: `Было: "${JSON.stringify(
       roundPoint(args.startPosition)
     )}"\nСтало: ${JSON.stringify(roundPoint(args.endPosition))}`,
