@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *{
+    @apply outline-none;
+  }
+  body {
+    @apply bg-bg-primary font-Fira text-text-primary;
+  }
+  #canvas {
+    @apply absolute outline-none focus:outline-none;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply cursor-pointer select-none rounded border border-transparent px-8 py-2 transition-all disabled:cursor-not-allowed disabled:opacity-30;
+  }
+
+  .btn-primary {
+    @apply btn border-primary bg-primary text-text-secondary enabled:hover:opacity-90 enabled:active:opacity-80;
+  }
+
+  .btn-secondary {
+    @apply btn border border-text-primary enabled:hover:opacity-80 enabled:active:opacity-60;
+  }
+
+  .btn-error {
+    @apply btn border-[#7a7a7a] bg-[#7a7a7a] text-text-secondary enabled:hover:opacity-90 enabled:active:opacity-80;
+  }
+
+  .horizontal-flip {
+    transform: scale(-1, 1);
+  }
+
+  .vertical-flip {
+    transform: scale(1, -1);
+  }
+
+  .event:has(+ .event:hover) hr {
+    border-color: transparent;
+  }
+}

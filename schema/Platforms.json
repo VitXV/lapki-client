@@ -1,0 +1,385 @@
+{
+  "$ref": "#/definitions/Platforms",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "ArgType": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "ArgumentProto": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "range": {
+          "$ref": "#/definitions/Range"
+        },
+        "type": {
+          "$ref": "#/definitions/ArgType"
+        },
+        "valueAlias": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "CompilingSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "command": {
+          "type": "string"
+        },
+        "flags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "command",
+        "flags"
+      ],
+      "type": "object"
+    },
+    "ComponentProto": {
+      "additionalProperties": false,
+      "properties": {
+        "buildFiles": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "constructorParameters": {
+          "additionalProperties": {
+            "$ref": "#/definitions/ParameterProto"
+          },
+          "type": "object"
+        },
+        "description": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "importFiles": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "initializationFunction": {
+          "type": "string"
+        },
+        "initializationParameters": {
+          "additionalProperties": {
+            "$ref": "#/definitions/ParameterProto"
+          },
+          "type": "object"
+        },
+        "loopActions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "methods": {
+          "additionalProperties": {
+            "$ref": "#/definitions/MethodProto"
+          },
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "signals": {
+          "additionalProperties": {
+            "$ref": "#/definitions/SignalProto"
+          },
+          "type": "object"
+        },
+        "singletone": {
+          "type": "boolean"
+        },
+        "variables": {
+          "additionalProperties": {
+            "$ref": "#/definitions/VariableProto"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "signals",
+        "variables",
+        "methods"
+      ],
+      "type": "object"
+    },
+    "MethodProto": {
+      "additionalProperties": false,
+      "properties": {
+        "alias": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/definitions/ArgumentProto"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ParameterProto": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/definitions/ArgType"
+        },
+        "valueAlias": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Platform": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "compile": {
+          "type": "boolean"
+        },
+        "compilingSettings": {
+          "items": {
+            "$ref": "#/definitions/CompilingSettings"
+          },
+          "type": "array"
+        },
+        "componentDeclaration": {
+          "type": "boolean"
+        },
+        "components": {
+          "additionalProperties": {
+            "$ref": "#/definitions/ComponentProto"
+          },
+          "type": "object"
+        },
+        "defaultBuildFiles": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "defaultIncludeFiles": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "defaultSetupFunctions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "delimeter": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "formatVersion": {
+          "type": "string"
+        },
+        "headerFileExtension": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "mainFileExtension": {
+          "type": "string"
+        },
+        "mainFunction": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nameTag": {
+          "type": "string"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "$ref": "#/definitions/ParameterProto"
+          },
+          "type": "object"
+        },
+        "standardVersion": {
+          "type": "string"
+        },
+        "staticActionDelimeter": {
+          "type": "string"
+        },
+        "staticComponents": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string"
+        },
+        "visual": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "compile",
+        "author",
+        "icon",
+        "formatVersion",
+        "standardVersion",
+        "staticComponents",
+        "delimeter",
+        "version",
+        "visual",
+        "staticActionDelimeter",
+        "components"
+      ],
+      "type": "object"
+    },
+    "Platforms": {
+      "$ref": "#/definitions/Platform"
+    },
+    "Range": {
+      "additionalProperties": false,
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        },
+        "step": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "min",
+        "max"
+      ],
+      "type": "object"
+    },
+    "SignalProto": {
+      "additionalProperties": false,
+      "properties": {
+        "alias": {
+          "type": "string"
+        },
+        "checkMethod": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/definitions/ArgumentProto"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "VariableProto": {
+      "additionalProperties": false,
+      "properties": {
+        "alias": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/ArgType"
+        },
+        "valueAlias": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
