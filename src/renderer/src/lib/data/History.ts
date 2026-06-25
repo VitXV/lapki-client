@@ -95,6 +95,15 @@ export type PossibleActions = {
     endPosition: Point;
   };
 
+  createDeepHistory: CreateVertexParams;
+  deleteDeepHistory: { smId: string; id: string; stateData: ChoiceStateData };
+  changeDeepHistoryPosition: {
+    smId: string;
+    id: string;
+    startPosition: Point;
+    endPosition: Point;
+  };
+
   createTransition: { smId: string; id: string; params: CreateTransitionParams };
   deleteTransition: { smId: string; id: string; prevData: TransitionData };
   changeTransition: {
