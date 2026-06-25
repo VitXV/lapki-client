@@ -64,7 +64,7 @@ export class DeepHistory extends Shape {
 
     const fontSize = 46 / this.app.controller.scale;
 
-    drawText(ctx, 'H', {
+    drawText(ctx, 'H*', {
       x: position.x,
       y: position.y - fontSize / 2 - lineWidth * 3,
       textAlign: 'center',
