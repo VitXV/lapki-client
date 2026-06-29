@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <data key="gFormat">Cyberiada-GraphML-1.0</data>
+  <key attr.name="name" attr.type="string" for="node" id="dName"></key>
+  <key attr.name="data" attr.type="string" for="node" id="dData"></key>
+  <key attr.name="data" attr.type="string" for="edge" id="dData"></key>
+  <key attr.name="initial" attr.type="string" for="node" id="dInitial"></key>
+  <key for="edge" id="dGeometry"></key>
+  <key for="node" id="dGeometry"></key>
+  <key for="edge" id="dColor"></key>
+  <key for="node" id="dNote"></key>
+  <key for="node" id="dColor"></key>
+  <graph id="CyBear1">
+    <data key="dStateMachine"></data>
+    <data key="dGeometry">
+      <rect x="0" y="0" width="450" height="100"></rect>
+    </data>
+    <node id="coreMeta">
+      <data key="dNote">formal</data>
+      <data key="dName">CGML_META</data>
+      <data key="dData">standardVersion/ 1.0
+
+platformVersion/ 1.0
+
+lapkiVisual/ true
+
+platform/ blg-mb-1-a12
+
+</data>
+    </node>
+    <node id="ogbonvckpvqleacpexyq">
+      <data key="dName">hier1</data>
+      <data key="dData">entry/
+Matrix1.clear();
+
+</data>
+      <data key="dGeometry">
+        <rect x="-403.4000366210936" y="-379.8999984741211" width="450" height="100"></rect>
+      </data>
+      <data key="dColor">#FFFFFF</data>
+      <graph id="ogbonvckpvqleacpexyq">
+        <node id="gjzmpomlmihlteuaolle">
+          <data key="dName">subhier1</data>
+          <data key="dData">entry/
+Matrix1.setPattern({100, 100, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 0, 0, 100, 100, 100, 100, 100});
+
+</data>
+          <data key="dGeometry">
+            <rect x="386.39" y="270.2299999999999" width="450" height="100"></rect>
+          </data>
+          <data key="dColor">#FFFFFF</data>
+        </node>
+        <node id="bnyoxbaszqgumgdfmnoy">
+          <data key="dName">hier2</data>
+          <data key="dData">entry/
+Matrix1.clear();
+
+</data>
+          <data key="dGeometry">
+            <rect x="301.7700000000003" y="650.67" width="450" height="100"></rect>
+          </data>
+          <data key="dColor">#FFFFFF</data>
+          <graph id="bnyoxbaszqgumgdfmnoy">
+            <node id="cfagtygguwkqvqgmxnob">
+              <data key="dName">subhier2</data>
+              <data key="dData">entry/
+Matrix1.setPattern({100, 100, 100, 100, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 100, 100, 100, 100});
+
+</data>
+              <data key="dGeometry">
+                <rect x="265" y="241.25" width="450" height="100"></rect>
+              </data>
+              <data key="dColor">#FFFFFF</data>
+            </node>
+            <node id="gdiojopubjgmlpntulnd">
+              <data key="dName">hier3</data>
+              <data key="dData">entry/
+Matrix1.clear();
+
+</data>
+              <data key="dGeometry">
+                <rect x="256.69000000000005" y="611.4799999999999" width="450" height="100"></rect>
+              </data>
+              <data key="dColor">#FFFFFF</data>
+              <graph id="gdiojopubjgmlpntulnd">
+                <node id="piubqyzmpzidymyqvgqf">
+                  <data key="dName">subhier31</data>
+                  <data key="dData">entry/
+Matrix1.setPattern({100, 100, 100, 100, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100});
+
+</data>
+                  <data key="dGeometry">
+                    <rect x="159" y="259" width="450" height="100"></rect>
+                  </data>
+                </node>
+                <node id="lmhkmnfwetwwqdooukdu">
+                  <data key="dName">subhier32</data>
+                  <data key="dData">entry/
+Matrix1.setPattern({100, 0, 0, 0, 100, 100, 0, 0, 0, 100, 100, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100, 0, 0, 0, 0, 100});
+
+</data>
+                  <data key="dGeometry">
+                    <rect x="158.95996337890006" y="665.9700007629397" width="450" height="100"></rect>
+                  </data>
+                </node>
+                <node id="tonplciktpykbcwpuvbh">
+                  <data key="dVertex">initial</data>
+                  <data key="dGeometry">
+                    <point x="32" y="187"></point>
+                  </data>
+                </node>
+              </graph>
+            </node>
+            <node id="diqfiqwfvmbglqbksyyw">
+              <data key="dVertex">initial</data>
+              <data key="dGeometry">
+                <point x="111.25" y="138.75"></point>
+              </data>
+            </node>
+          </graph>
+        </node>
+        <node id="txwmywojmytlvetbywob">
+          <data key="dVertex">initial</data>
+          <data key="dGeometry">
+            <point x="252" y="134"></point>
+          </data>
+        </node>
+        <node id="dtjtutullhbnspmexvsg">
+          <data key="dVertex">deepHistory</data>
+          <data key="dGeometry">
+            <point x="51.419963378900434" y="427.1200007629396"></point>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="jvdigkbzdsonypsqitsz">
+      <data key="dName">outside</data>
+      <data key="dData">entry/
+Matrix1.setPattern({100, 100, 100, 100, 100, 100, 0, 0, 0, 100, 100, 0, 0, 0, 100, 100, 0, 0, 0, 100, 100, 0, 0, 0, 100, 100, 0, 0, 0, 100, 100, 100, 100, 100, 100});
+
+</data>
+      <data key="dGeometry">
+        <rect x="-1227.1800549316463" y="-315.63999771118154" width="450" height="100"></rect>
+      </data>
+      <data key="dColor">#FFFFFF</data>
+    </node>
+    <node id="lclnsensjmkfetnuotsh">
+      <data key="dVertex">initial</data>
+      <data key="dGeometry">
+        <point x="-546.1700366210938" y="-450.979998474121"></point>
+      </data>
+    </node>
+    <node id="cButton1">
+      <data key="dNote">formal</data>
+      <data key="dName">CGML_COMPONENT</data>
+      <data key="dData">id/ Button1
+
+type/ Button
+
+pin/ 1
+
+name/ right
+
+label/ r
+
+</data>
+      <data key="dLapkiSchemePosition">
+        <point x="30" y="30"></point>
+      </data>
+    </node>
+    <node id="cMatrix1">
+      <data key="dNote">formal</data>
+      <data key="dName">CGML_COMPONENT</data>
+      <data key="dData">id/ Matrix1
+
+type/ Matrix
+
+name/ test_matrix
+
+</data>
+      <data key="dLapkiSchemePosition">
+        <point x="30" y="30"></point>
+      </data>
+    </node>
+    <node id="cButton2">
+      <data key="dNote">formal</data>
+      <data key="dName">CGML_COMPONENT</data>
+      <data key="dData">id/ Button2
+
+type/ Button
+
+pin/ 2
+
+label/ l
+
+name/ left
+
+</data>
+      <data key="dLapkiSchemePosition">
+        <point x="30" y="30"></point>
+      </data>
+    </node>
+    <edge id="bnpjbkeoilbmqwuktsmo" source="lclnsensjmkfetnuotsh" target="ogbonvckpvqleacpexyq"></edge>
+    <edge id="xmjkptcatjsqmatytfky" source="txwmywojmytlvetbywob" target="gjzmpomlmihlteuaolle"></edge>
+    <edge id="kjavuqhvccyzpushejvd" source="diqfiqwfvmbglqbksyyw" target="cfagtygguwkqvqgmxnob"></edge>
+    <edge id="ncpnnwjcgmcimvfeyfux" source="cfagtygguwkqvqgmxnob" target="gdiojopubjgmlpntulnd">
+      <data key="dData">Button1.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="366.1749633789066" y="777.4750015258791"></point>
+      </data>
+    </edge>
+    <edge id="zwvwfdaagnlbauekgdon" source="jvdigkbzdsonypsqitsz" target="ogbonvckpvqleacpexyq">
+      <data key="dData">Button1.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="-668.5500457763706" y="-321.45999809265135"></point>
+      </data>
+    </edge>
+    <edge id="ealdackebmquuskptgxi" source="gjzmpomlmihlteuaolle" target="bnyoxbaszqgumgdfmnoy">
+      <data key="dData">Button1.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="276.7949633789061" y="91.64500152587877"></point>
+      </data>
+    </edge>
+    <edge id="ttdnkyvphilbptocjidf" source="gjzmpomlmihlteuaolle" target="jvdigkbzdsonypsqitsz">
+      <data key="dData">Button2.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="-904.9250457763699" y="-25.52499809265139"></point>
+      </data>
+    </edge>
+    <edge id="gjfchgltlkvuvffaxsso" source="cfagtygguwkqvqgmxnob" target="jvdigkbzdsonypsqitsz">
+      <data key="dData">Button2.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="-1021.28504577637" y="176.23000190734854"></point>
+      </data>
+    </edge>
+    <edge id="ssqavyynpxvunjcuguuw" source="gdiojopubjgmlpntulnd" target="jvdigkbzdsonypsqitsz">
+      <data key="dData">Button2.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="-1211.11004577637" y="325.5550019073485"></point>
+      </data>
+    </edge>
+    <edge id="koesnpadhxuvsidvecmu" source="dtjtutullhbnspmexvsg" target="gjzmpomlmihlteuaolle"></edge>
+    <edge id="svhnlvljzjtwuwfliuzz" source="jvdigkbzdsonypsqitsz" target="dtjtutullhbnspmexvsg">
+      <data key="dData">Button2.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="-712.5800640869197" y="-146.20999771118153"></point>
+      </data>
+    </edge>
+    <edge id="uchbzsknioniqyvcozto" source="tonplciktpykbcwpuvbh" target="piubqyzmpzidymyqvgqf"></edge>
+    <edge id="gsszaolttdcdazhbdyaw" source="piubqyzmpzidymyqvgqf" target="lmhkmnfwetwwqdooukdu">
+      <data key="dData">Button1.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="538.0399450683568" y="1347.7350019073488"></point>
+      </data>
+    </edge>
+    <edge id="txygcgaumdebsbtaaxom" source="piubqyzmpzidymyqvgqf" target="jvdigkbzdsonypsqitsz">
+      <data key="dData">Button2.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="-456.56004577636975" y="412.80500190734864"></point>
+      </data>
+    </edge>
+    <edge id="osjckqoiskybjxawvkac" source="lmhkmnfwetwwqdooukdu" target="jvdigkbzdsonypsqitsz">
+      <data key="dData">Button2.clicked/
+
+</data>
+      <data key="dLabelGeometry">
+        <point x="-456.5800640869197" y="616.2900022888184"></point>
+      </data>
+    </edge>
+  </graph>
+</graphml>
