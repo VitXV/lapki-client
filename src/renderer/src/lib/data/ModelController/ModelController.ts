@@ -2700,9 +2700,9 @@ export class ModelController extends EventEmitter<ModelControllerEvents> {
       // Проверка дочерних состояний
       const checkChildren = (stateId: string): boolean => {
         // Используем Object.entries, чтобы получить id (ключ словаря) и сам объект
-        const children = Object.entries(sm.states).filter(([key, s]) => s.parentId === stateId);
+        const children = Object.entries(sm.states).filter(([, s]) => s.parentId === stateId);
 
-        for (const [childId, child] of children) {
+        for (const [childId] of children) {
           const hasDeepHistory = Object.values(sm.deepHistory || {}).some(
             (dh) => dh.parentId === childId // Используем childId вместо child.id
           );
