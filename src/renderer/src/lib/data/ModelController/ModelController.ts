@@ -2666,12 +2666,13 @@ export class ModelController extends EventEmitter<ModelControllerEvents> {
     this.emit('linkDeepHistory', { smId, childId: stateId, parentId });
   }
 
+  // Лютый вайбкод
   createDeepState = (args: CreateVertexParams, canUndo = true) => {
     const { smId, parentId, linkByPoint = true } = args;
     let { id } = args;
     let computedParentId: string | undefined = undefined;
-    // Проверка на то что в скоупе уже есть конечное состояние
     // Страшно, очень страшно
+
     let parent = parentId ? this.model.data.elements.stateMachines[smId].states[parentId] : null;
     if (!parent) {
       const possibleParent = linkByPoint ? this.getPossibleParentState(smId, args.position) : null;
@@ -2681,9 +2682,41 @@ export class ModelController extends EventEmitter<ModelControllerEvents> {
       }
     }
 
-    const siblingIds = this.getSiblings(smId, id, computedParentId ?? parentId, 'deepHistory')[1];
+    const general_parentId = computedParentId ?? parentId;
 
-    if (siblingIds.length > 0) return;
+    if (general_parentId) {
+      const sm = this.model.data.elements.stateMachines[smId];
+
+      // Проверка родителей
+      let currentId: string | undefined = general_parentId;
+      while (currentId) {
+        const hasDeepHistory = Object.values(sm.deepHistory || {}).some(
+          (dh) => dh.parentId === currentId
+        );
+        if (hasDeepHistory) return;
+        currentId = sm.states[currentId]?.parentId;
+      }
+
+      // Проверка дочерних состояний
+      const checkChildren = (stateId: string): boolean => {
+        // Используем Object.entries, чтобы получить id (ключ словаря) и сам объект
+        const children = Object.entries(sm.states).filter(([key, s]) => s.parentId === stateId);
+
+        for (const [childId, child] of children) {
+          const hasDeepHistory = Object.values(sm.deepHistory || {}).some(
+            (dh) => dh.parentId === childId // Используем childId вместо child.id
+          );
+          if (hasDeepHistory) return true;
+          if (checkChildren(childId)) return true; // Используем childId вместо child.id
+        }
+        return false;
+      };
+
+      if (checkChildren(general_parentId)) return;
+    } else {
+      const siblingIds = this.getSiblings(smId, id, undefined, 'deepHistory')[1];
+      if (siblingIds.length > 0) return;
+    }
 
     id = this.model.createVertex(args, 'deepHistory');
     const state = this.model.data.elements.stateMachines[smId].deepHistory[id];
