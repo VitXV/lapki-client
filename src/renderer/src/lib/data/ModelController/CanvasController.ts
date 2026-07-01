@@ -746,7 +746,7 @@ export class CanvasController extends EventEmitter<CanvasControllerEvents> {
           'changeShallowHistoryPosition',
           this.bindHelper(
             'shallowHistory',
-            'changeChoicePosition',
+            'changeShallowHistoryPosition',
             this.states.changeShallowHistoryPosition
           )
         );
@@ -769,7 +769,7 @@ export class CanvasController extends EventEmitter<CanvasControllerEvents> {
           'changeDeepHistoryPosition',
           this.bindHelper(
             'deepHistory',
-            'changeChoicePosition',
+            'changeDeepHistoryPosition',
             this.states.changeDeepHistoryPosition
           )
         );

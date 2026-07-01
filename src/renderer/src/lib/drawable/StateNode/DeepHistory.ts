@@ -4,7 +4,7 @@ import { Shape } from '@renderer/lib/drawable/Shape';
 import { drawCircle } from '@renderer/lib/utils';
 import { drawText } from '@renderer/lib/utils/text';
 import { getColor } from '@renderer/theme';
-import { ChoiceState as DataChoiceState } from '@renderer/types/diagram';
+import { DeepHistory as DataDeepHistory } from '@renderer/types/diagram';
 
 /**
  * Представление псевдосостояния глубокой истории
@@ -12,9 +12,9 @@ import { ChoiceState as DataChoiceState } from '@renderer/types/diagram';
 export class DeepHistory extends Shape {
   isSelected = false;
   edgeHandlers!: EdgeHandlers;
-  data: DataChoiceState;
+  data: DataDeepHistory;
   smId: string;
-  constructor(app: CanvasEditor, id: string, smId: string, data: DataChoiceState, parent?: Shape) {
+  constructor(app: CanvasEditor, id: string, smId: string, data: DataDeepHistory, parent?: Shape) {
     super(app, id, parent);
     this.data = data;
     this.smId = smId;
@@ -48,7 +48,6 @@ export class DeepHistory extends Shape {
     }
   }
 
-  // TODO(bryzZz) Закруглить углы
   private drawBody(ctx: CanvasRenderingContext2D) {
     const { x, y, width } = this.drawBounds;
     const radius = width / 2;

@@ -279,16 +279,16 @@ export class ModelController extends EventEmitter<ModelControllerEvents> {
       if (!this.getBySourceId(args.smId, args.sourceId)) {
         this.createTransition({ ...args });
       } else {
-        // TODO (L140-beep): тостер с информацией о неудачном создани
+        // TODO (L140-beep): тостер с информацией о неудачном создании
       }
       return;
     }
     if (sm.deepHistory[args.sourceId]) {
-      // (L140-beep) Для глубокой истории нельзя делать несколько исходящих переходов
+      // Для глубокой истории нельзя делать несколько исходящих переходов
       if (!this.getBySourceId(args.smId, args.sourceId)) {
         this.createTransition({ ...args });
       } else {
-        // TODO (L140-beep): тостер с информацией о неудачном создани
+        // тостер с информацией о неудачном создании
       }
       return;
     }
