@@ -61,15 +61,28 @@ export class DeepHistory extends Shape {
       strokeStyle: getColor('error'),
     });
 
-    const fontSize = 46 / this.app.controller.scale;
+    const fontSize1 = 40 / this.app.controller.scale;
 
     drawText(ctx, 'H', {
-      x: position.x,
-      y: position.y - fontSize / 2 - lineWidth * 3,
+      x: position.x - fontSize1 * 0.05,
+      y: position.y - fontSize1 / 2 - lineWidth * 3,
       textAlign: 'center',
       color: getColor('error'),
       font: {
-        fontSize,
+        fontSize: fontSize1,
+        fontFamily: 'Fira Sans',
+      },
+    });
+
+    const fontSize2 = 24 / this.app.controller.scale;
+
+    drawText(ctx, '*', {
+      x: position.x + fontSize2 * 0.6,
+      y: position.y - fontSize2 * 0.95,
+      textAlign: 'center',
+      color: getColor('error'),
+      font: {
+        fontSize: fontSize2,
         fontFamily: 'Fira Sans',
       },
     });

@@ -67,7 +67,7 @@ export class ShallowHistory extends Shape {
       strokeStyle: getColor('primary'),
     });
 
-    const fontSize = 46 / this.app.controller.scale;
+    const fontSize = 40 / this.app.controller.scale;
 
     drawText(ctx, 'H', {
       x: position.x,
